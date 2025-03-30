@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# Timezone Demo App
+# Timezone Demo
 
 A React application that demonstrates handling timezone conversions globally, showing all times in Eastern Time (ET) regardless of the user's local timezone.
 
@@ -38,6 +37,4 @@ The application uses a React context (`TimezoneContext`) to provide timezone con
 - `getCurrentETTime()`: Gets the current time in Eastern Time
 
 This ensures that all parts of the application display times consistently in Eastern Time, regardless of the user's local timezone.
-=======
-# timezone_demo
->>>>>>> 9b2e403ba72ed0f3757dd57f6b2ddd1a769d79e7
+
