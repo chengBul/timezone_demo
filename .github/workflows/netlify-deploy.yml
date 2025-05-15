@@ -42,7 +42,7 @@ jobs:
         with:
           publish-dir: './build'
           production-branch: main
-          deploy-message: '${{ steps.get_commit_message.outputs.message }}'
+          deploy-message: ' Deploy from GitHub Actions: ${{ steps.get_commit_message.outputs.message }}'
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
