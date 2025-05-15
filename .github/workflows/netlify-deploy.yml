@@ -28,12 +28,21 @@ jobs:
       - name: Build project
         run: npm run build
       
+      - name: Get commit message
+        id: get_commit_message
+        run: |
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            echo "message=PR #${{ github.event.pull_request.number }}: ${{ github.event.pull_request.title }}" >> $GITHUB_OUTPUT
+          else
+            echo "message=$(git log -1 --pretty=format:'%s')" >> $GITHUB_OUTPUT
+          fi
+      
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2.0
         with:
           publish-dir: './build'
           production-branch: main
-          deploy-message: 'Deploy from GitHub Actions'
+          deploy-message: '${{ steps.get_commit_message.outputs.message }}'
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
