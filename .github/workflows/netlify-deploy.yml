@@ -3,7 +3,7 @@ name: Deploy to Netlify
 on:
   push:
     branches:
-      - main  # 默认主分支，您可以根据需要更改为您的主分支名
+      - main  # Change this to your default branch if different
 
 jobs:
   build-and-deploy:
