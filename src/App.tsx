@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import { TimezoneProvider } from './contexts/TimezoneContext';
 import Clock from './components/Clock';
-import DateConverter from './components/DateConverter';
 import TodoList from './components/TodoList';
+import DateConverter from './components/DateConverter';
 
 function App() {
   return (
@@ -14,8 +14,8 @@ function App() {
           <p>This app displays all times in Eastern Time (ET) regardless of your local timezone</p>
         </header>
         <main className="App-main">
-          <Clock />
-         
+          <Clock />   
+          <DateConverter/> 
           <TodoList />
         </main>
         <footer className="App-footer">
